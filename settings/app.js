@@ -1,6 +1,5 @@
 // const axios = require('axios')
 // const url = 'http://checkip.amazonaws.com/';
-let response;
 
 /**
  *
@@ -23,24 +22,40 @@ const documentClient = new AWS.DynamoDB.DocumentClient(config);
 const tableName = "settings";
 
 exports.lambdaHandler = async (event, context) => {
+  let params;
+  let result;
+  console.log(event);
   try {
     switch(event.httpMethod){
       case "GET":
         console.log("recieve get request");
-        const params = {
+        params = {
           TableName: tableName,
           KeyConditionExpression: "#ID = :ID",
           ExpressionAttributeNames: {"#ID": "uid"},
-          ExpressionAttributeValues: {":ID": "1"}
+          ExpressionAttributeValues: {":ID": event.pathParameters.id}
         }
         console.log(params);
-        const result = await documentClient.query(params).promise();
+        result = await documentClient.query(params).promise();
 
         return {
           'statusCode': 200,
           'body': JSON.stringify(result)
         }
-      case POST:
+      case "POST":
+        console.log("recieve post request");
+        const item = JSON.parse(event.body);
+        console.log(item);
+        params = {
+          TableName: tableName,
+          Item: item
+        }
+        result = await documentClient.put(params).promise();
+
+        return {
+          'statusCode': 200,
+          'body': JSON.stringify(result)
+        }
       default:
     }
   } catch (err) {
