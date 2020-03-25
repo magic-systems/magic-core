@@ -1,0 +1,15 @@
+{
+  "AttributeDefinitions": [
+      {
+          "AttributeName": "uid",
+          "AttributeType": "S"
+      }
+  ],
+  "TableName": "settings",
+  "KeySchema": [
+      {
+          "AttributeName": "uid",
+          "KeyType": "HASH"
+      }
+  ]
+}
