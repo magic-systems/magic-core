@@ -31,9 +31,15 @@ exports.lambdaHandler = async (event, context) => {
         console.log("recieve get request");
         params = {
           TableName: tableName,
-          KeyConditionExpression: "#ID = :ID",
-          ExpressionAttributeNames: {"#ID": "uid"},
-          ExpressionAttributeValues: {":ID": event.pathParameters.id}
+          KeyConditionExpression: "#ID = :ID AND #NAME = :NAME",
+          ExpressionAttributeNames: {
+            "#ID": "uid",
+            "#NAME":"name"
+          },
+          ExpressionAttributeValues: {
+            ":ID": event.pathParameters.id,
+            ":NAME": event.pathParameters.name
+          }
         }
         console.log(params);
         result = await documentClient.query(params).promise();
@@ -48,7 +54,11 @@ exports.lambdaHandler = async (event, context) => {
         console.log(item);
         params = {
           TableName: tableName,
-          Item: item
+          Item: {
+            "uid":event.pathParameters.id,
+            "name":event.pathParameters.name,
+            "content":item
+          }
         }
         result = await documentClient.put(params).promise();
 

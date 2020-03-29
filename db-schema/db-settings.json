@@ -1,15 +1,23 @@
 {
   "AttributeDefinitions": [
-      {
-          "AttributeName": "uid",
-          "AttributeType": "S"
-      }
+    {
+        "AttributeName": "uid",
+        "AttributeType": "S"
+    },
+    {
+      "AttributeName": "name",
+      "AttributeType": "S"
+    }
   ],
   "TableName": "settings",
   "KeySchema": [
-      {
-          "AttributeName": "uid",
-          "KeyType": "HASH"
-      }
+    {
+        "AttributeName": "uid",
+        "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "name",
+      "KeyType": "RANGE"
+    }
   ]
 }

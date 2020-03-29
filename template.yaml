@@ -25,12 +25,12 @@ Resources:
         SettingsGET:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /settings/{id}
+            Path: /settings/{id}/{name}
             Method: get
         SettingsPOST:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /settings/
+            Path: /settings/{id}/{name}
             Method: post
 
 #Outputs:
