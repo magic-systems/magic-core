@@ -5,4 +5,7 @@ services:
     image: amazon/dynamodb-local
     container_name: dynamodb
     ports:
-      - 8000:8000
+      - 9000:9000
+    command: "-jar DynamoDBLocal.jar -port 9000 -dbPath /db-data"
+    volumes:
+      - $PWD/db-data:/db-data
