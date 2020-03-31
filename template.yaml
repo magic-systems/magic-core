@@ -32,6 +32,21 @@ Resources:
           Properties:
             Path: /settings/{id}/{name}
             Method: post
+  SettingsDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: uid
+            AttributeType: S
+          - AttributeName: name
+            AttributeType: S
+        TableName: settings
+        KeySchema:
+          - AttributeName: uid
+            KeyType: HASH
+          - AttributeName: name
+            KeyType: RANGE
 
 #Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
