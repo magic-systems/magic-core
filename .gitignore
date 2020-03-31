@@ -127,6 +127,7 @@ $RECYCLE.BIN/
 
 # build image
 .aws-sam
+packaged.yaml
 
 # dynamodb data
 db-data
