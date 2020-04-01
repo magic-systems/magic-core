@@ -1,48 +1,51 @@
 {
-  "httpMethod": "GET",
-  "body": null,
-  "resource": "/settings/{id}",
-  "requestContext": {
-    "resourceId": "123456",
-    "apiId": "1234567890",
-    "resourcePath": "/settings/{id}",
-    "httpMethod": "GET",
-    "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
-    "accountId": "123456789012",
-    "stage": "Prod",
-    "identity": {
-      "apiKey": null,
-      "userArn": null,
-      "cognitoAuthenticationType": null,
-      "caller": null,
-      "userAgent": "Custom User Agent String",
-      "user": null,
-      "cognitoIdentityPoolId": null,
-      "cognitoAuthenticationProvider": null,
-      "sourceIp": "127.0.0.1",
-      "accountId": null
+  "httpMethod":"GET",
+  "body":null,
+  "resource":"/settings/{id}/{name}",
+  "requestContext":{
+    "resourceId":"123456",
+    "apiId":"1234567890",
+    "resourcePath":"/settings/{id}/{name}",
+    "httpMethod":"GET",
+    "requestId":"c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
+    "accountId":"123456789012",
+    "stage":"Prod",
+    "identity":{
+      "apiKey":null,
+      "userArn":null,
+      "cognitoAuthenticationType":null,
+      "caller":null,
+      "userAgent":"Custom User Agent String",
+      "user":null,
+      "cognitoIdentityPoolId":null,
+      "cognitoAuthenticationProvider":null,
+      "sourceIp":"127.0.0.1",
+      "accountId":null
     },
-    "extendedRequestId": null,
-    "path": "/settings/{id}"
+    "extendedRequestId":null,
+    "path":"/settings/{id}/{name}"
   },
-  "queryStringParameters": null,
-  "multiValueQueryStringParameters": null,
-  "headers": {
-    "Host": "127.0.0.1:3000",
-    "User-Agent": "curl/7.64.1",
-    "Accept": "*/*",
-    "X-Forwarded-Proto": "http",
-    "X-Forwarded-Port": "3000"
+  "queryStringParameters":null,
+  "multiValueQueryStringParameters":null,
+  "headers":{
+    "Host":"127.0.0.1:3000",
+    "User-Agent":"curl/7.64.1",
+    "Accept":"*/*",
+    "X-Forwarded-Proto":"http",
+    "X-Forwarded-Port":"3000"
   },
-  "multiValueHeaders": {
-    "Host": [ "127.0.0.1:3000" ],
-    "User-Agent": [ "curl/7.64.1" ],
-    "Accept": [ "*/*" ],
-    "X-Forwarded-Proto": [ "http" ],
-    "X-Forwarded-Port": [ "3000" ]
+  "multiValueHeaders":{
+    "Host":["127.0.0.1:3000"],
+    "User-Agent":["curl/7.64.1"],
+    "Accept":["*/*"],
+    "X-Forwarded-Proto":["http"],
+    "X-Forwarded-Port":["3000"]
   },
-  "pathParameters": { "id": "1" },
-  "stageVariables": null,
-  "path": "/settings/1",
-  "isBase64Encoded": false
+  "pathParameters":{
+    "id":"1",
+    "name":"order"
+  },
+  "stageVariables":null,
+  "path":"/settings/1/order",
+  "isBase64Encoded":false
 }

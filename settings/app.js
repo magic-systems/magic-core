@@ -24,7 +24,7 @@ const tableName = "settings";
 exports.lambdaHandler = async (event, context) => {
   let params;
   let result;
-  console.log(event);
+  console.log(JSON.stringify(event));
   try {
     switch(event.httpMethod){
       case "GET":
