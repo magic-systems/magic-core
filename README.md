@@ -10,11 +10,17 @@ $ aws dynamodb create-table --cli-input-json file://db-schema/db-settings.json -
 
 ## local test
 
-* adjust env.json to your environment
+* adjust settings/env.json to your environment
+
+#### put sample data 
+
+$ sam local invoke  -e events/event_post.json --env-vars settings/env.json
+
+#### get sample data 
 
 $ sam local invoke  -e events/event_get.json --env-vars settings/env.json
 
-$ sam local invoke  -e events/event_post.json --env-vars settings/env.json
+
 
 ## run API
 $ sam local start-api --env-vars settings/env.json
